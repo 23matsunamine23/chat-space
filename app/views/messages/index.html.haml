@@ -1,11 +1,16 @@
 .header
-  %p グループを作成しました
+  %p.header__message グループを作成しました
 
 .container
-  .side__menu
+  .side
     .side__header
+      %p.side__header__name test-user
+      =link_to "#", class: "side__header__btn" do
+        = fa_icon 'edit'
+      =link_to "#", class: "side__header__btn" do
+        = fa_icon 'cog'
     .side__list
-
+      = render 'messages/group'
   .main
     .main__header
     .main__list
