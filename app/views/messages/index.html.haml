@@ -1,0 +1,35 @@
+.header
+  %p.header__message グループを作成しました
+
+.container
+  .side
+    .side__header
+      %p.side__header__name test-user
+      =link_to "#", class: "side__header__btn" do
+        = fa_icon 'edit'
+      =link_to "#", class: "side__header__btn" do
+        = fa_icon 'cog'
+    .side__list
+      = render 'messages/group'
+  
+  .main
+    .main__header
+      %h2.main__header__group test-group
+      .member__list
+        %p.member__list__title Member :
+        %ul.member__list__title__name
+          %li hoge
+      = link_to "Edit", '#', class: "main__header__edit-btn"
+    
+    .main__message
+      = render 'messages/text'
+    
+    .main__footer
+      %form{action: "#", method: "post"}
+      .main__footer__form
+        %input{type: "text", placeholder: "type a message", class: "main__footer__form__text"}
+        %label.upload-label{for: "main__footer__form__image"}
+          %i.fa.fa-picture-o
+          %input{type: "file", id: "main__footer__form__image"}
+      %input{type: "submit", value: "Send", class: "main__footer__form__btn"}
+
