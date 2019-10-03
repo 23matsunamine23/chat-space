@@ -11,7 +11,17 @@
         = fa_icon 'cog'
     .side__list
       = render 'messages/group'
+  
   .main
     .main__header
-    .main__list
-    .main__footer  
+      %h2.main__header__group test-group
+      .member__list
+        %p.member__list__title Member :
+        %ul.member__list__title__name
+          %li hoge
+      = link_to "Edit", '#', class: "main__header__edit-btn"
+    
+    .main__message
+      = render 'messages/text'
+    
+    .main__footer

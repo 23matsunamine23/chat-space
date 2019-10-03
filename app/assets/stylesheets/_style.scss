@@ -59,18 +59,74 @@
 .main{
   height: 100vh;
   width: calc(100vw - 300px); 
-  background-color: #773366;
+  position: relative;
   &__header{
     height: 100px;
     background-color: #fff;
     border-bottom: 1px solid #eee;
+    padding: 0 40px;
+    &__edit-btn{
+      position: absolute;
+      top: 35px;
+      left: 90%;
+      display: block;
+      color: rgb(128, 200, 248);
+      border: 2px solid rgb(128, 200, 248);
+      text-decoration: none;
+      padding: 5px 20px;
+    }
+    &__group{
+      line-height: 100px;
+      font-size: 20px;
+      color: #333333;
+      display: inline;
+    }
+  .member__list{
+    display: flex;
+    position: absolute;
+    top: 80px;
+    &__title{
+      font-size: 12px;
+      color: #999;
+    }
+    &__title__name{
+        font-size: 12px;
+        color: #999;
+        padding: 0 5px;
+      }
+  }  
   }
-  &__list{
+  &__message{
     height: calc(100vh - 130px - 100px);
-    background-color: #fafafa
+    background-color: #fafafa;
+    padding: 46px 20px;
+    &__box{
+      padding-bottom: 40px;
+      position: relative;
+    }
+      &__name{
+        font-size: 16px;
+        color: #434a54;
+        font-weight: bold;
+      }
+      &__text{
+        font-size: 14px;
+        color: #434a54;
+        margin-top: 10px;
+      }
+      &__date{
+        font-size: 12px;
+        color: #999;
+        position: absolute;
+        top: 0px;
+        left: 100px;
+      }
   }
   &__footer{
     background-color: #DDDDDD;
     height: 100px;
+    position: fixed;
+    width: calc(100vw - 300px); 
+    bottom: 0;
   }
 }
