@@ -1,0 +1,159 @@
+.container{
+  display: flex;
+}
+
+.header{
+  background-color: #38aef0;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-align: center;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+}
+
+.side{
+  width: 300px;
+  height: 100vh;
+  list-style: none;
+  &__header{
+    height: 100px;
+    padding: 0 20px;
+    background-color: #253141;
+    display: flex;
+    align-items: center;
+    &__name{
+      font-size: 16px;
+      font-weight: bold;
+      margin-right: 140px;
+      color: #fff;
+    }
+    &__btn{
+      text-decoration:none;
+      color: #fff;
+      text-align: center;
+      margin-left: 5px;
+    }
+  }
+  &__list{
+    height: calc(100vh - 130px);
+    background-color: #2f3e51;
+    padding: 20px 20px 0px 20px;
+    .group__box{
+      padding-bottom: 40px;
+      &__name{
+        color: #fff;
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      &__message{
+        color: #fff;
+        font-size: 11px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.main{
+  height: 100vh;
+  width: calc(100vw - 300px); 
+  position: relative;
+  &__header{
+    height: 100px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 0 40px;
+    &__edit-btn{
+      position: absolute;
+      top: 35px;
+      left: 90%;
+      display: block;
+      color: rgb(128, 200, 248);
+      border: 2px solid rgb(128, 200, 248);
+      text-decoration: none;
+      padding: 5px 20px;
+    }
+    &__group{
+      line-height: 100px;
+      font-size: 20px;
+      color: #333333;
+      display: inline;
+    }
+  .member__list{
+    display: flex;
+    position: absolute;
+    top: 80px;
+    &__title{
+      font-size: 12px;
+      color: #999;
+    }
+    &__title__name{
+        font-size: 12px;
+        color: #999;
+        padding: 0 5px;
+      }
+  }  
+  }
+  &__message{
+    height: calc(100vh - 130px - 100px);
+    background-color: #fafafa;
+    padding: 46px 40px;
+    &__box{
+      padding-bottom: 40px;
+      position: relative;
+    }
+      &__name{
+        font-size: 16px;
+        color: #434a54;
+        font-weight: bold;
+      }
+      &__text{
+        font-size: 14px;
+        color: #434a54;
+        margin-top: 10px;
+      }
+      &__date{
+        font-size: 12px;
+        color: #999;
+        position: absolute;
+        top: 0px;
+        left: 100px;
+      }
+  }
+  &__footer{
+    background-color: #DDDDDD;
+    height: 100px;
+    position: fixed;
+    width: calc(100vw - 300px); 
+    bottom: 0;
+    padding: 0 40px;
+    &__form{
+      line-height: 100px;
+      position: relative;
+      .upload-label{
+        position: absolute;
+        top: 0px;
+        left: 78%;
+      }
+      #main__footer__form__image{
+        display: none;
+      }
+      &__text{
+        height: 50px;
+        width: 80%;
+        padding-left: 10px;
+      }
+      &__btn{
+        position: absolute;
+        top: 23px;
+        left: 80%;
+        background-color: #38aef0;
+        color: #fff;
+        font-weight: bold;
+        padding: 15px 40px;
+      }
+    }
+  }
+}
