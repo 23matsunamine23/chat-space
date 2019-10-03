@@ -25,3 +25,11 @@
       = render 'messages/text'
     
     .main__footer
+      %form{action: "#", method: "post"}
+      .main__footer__form
+        %input{type: "text", placeholder: "type a message", class: "main__footer__form__text"}
+        %label.upload-label{for: "main__footer__form__image"}
+          %i.fa.fa-picture-o
+          %input{type: "file", id: "main__footer__form__image"}
+      %input{type: "submit", value: "Send", class: "main__footer__form__btn"}
+

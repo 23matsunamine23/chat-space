@@ -99,7 +99,7 @@
   &__message{
     height: calc(100vh - 130px - 100px);
     background-color: #fafafa;
-    padding: 46px 20px;
+    padding: 46px 40px;
     &__box{
       padding-bottom: 40px;
       position: relative;
@@ -128,5 +128,32 @@
     position: fixed;
     width: calc(100vw - 300px); 
     bottom: 0;
+    padding: 0 40px;
+    &__form{
+      line-height: 100px;
+      position: relative;
+      .upload-label{
+        position: absolute;
+        top: 0px;
+        left: 78%;
+      }
+      #main__footer__form__image{
+        display: none;
+      }
+      &__text{
+        height: 50px;
+        width: 80%;
+        padding-left: 10px;
+      }
+      &__btn{
+        position: absolute;
+        top: 23px;
+        left: 80%;
+        background-color: #38aef0;
+        color: #fff;
+        font-weight: bold;
+        padding: 15px 40px;
+      }
+    }
   }
 }
