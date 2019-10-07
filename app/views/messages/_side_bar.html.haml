@@ -1,0 +1,18 @@
+.side
+  .side__header
+    %h3.side__header__name
+      = current_user.name
+      = link_to new_group_path do
+        = fa_icon 'edit', class: "side__header__btn"
+      = link_to edit_user_path(current_user) do
+        = fa_icon 'cog', class: "side__header__btn"
+  .side__list
+    - current_user.groups.each do |group|
+      .group__box
+        = link_to group_messages_path(group) do
+          .group__box__name
+            = group.name
+          .group__box__message
+
+
+
