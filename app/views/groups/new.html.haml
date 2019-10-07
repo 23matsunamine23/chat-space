@@ -1,6 +1,6 @@
 .chat-group-form
   %h1 新規チャットグループ
-  = form_with @group do |form|
+  = form_for @group do |form|
     - if @group.errors.any?
       .chat-group-form__errors
         %h2= "#{@group.errors.full_messages.count}件のエラーが発生しました。"
@@ -19,7 +19,7 @@
         = form.label "チャットメンバー", class: "chat-gorup-form__label"
       .chat-group-form__field--right
         / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
-        = form.collection_check_boxes :usr_ids, User.all, :id, :name
+        = form.collection_check_boxes :user_ids, User.all, :id, :name
         / この部分はインクリメンタルサーチ(ユーザー追加の非同期化)のときにも使用します
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
