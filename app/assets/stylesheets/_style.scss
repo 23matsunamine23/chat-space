@@ -94,7 +94,7 @@
         color: #999;
         padding: 0 5px;
       }
-  }  
+  } 
   }
   &__message{
     height: calc(100vh - 130px - 100px);
@@ -131,7 +131,6 @@
     padding: 0 40px;
     &__form{
       line-height: 100px;
-      position: relative;
       .upload-label{
         position: absolute;
         top: 0px;
