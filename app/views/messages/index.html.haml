@@ -2,20 +2,11 @@
   %p.header__message グループを作成しました
 
 .container
-  .side
-    .side__header
-      %p.side__header__name
-        = current_user.name
-      =link_to new_group_path , class: "side__header__btn" do
-        = fa_icon 'edit'
-      =link_to "#", class: "side__header__btn" do
-        = fa_icon 'cog'
-    .side__list
-      = render 'messages/group'
-
+  = render 'side_bar'
   .main
     .main__header
-      %h2.main__header__group test-group
+      %h2.main__header__group
+        
       .member__list
         %p.member__list__title Member :
         %ul.member__list__title__name
@@ -23,14 +14,13 @@
       = link_to "Edit", '#', class: "main__header__edit-btn"
 
     .main__message
-      = render 'messages/text'
+      = render @messages
 
     .main__footer
-      %form{action: "#", method: "post"}
-      .main__footer__form
-        %input{type: "text", placeholder: "type a message", class: "main__footer__form__text"}
-        %label.upload-label{for: "main__footer__form__image"}
-          %i.fa.fa-picture-o
-          %input{type: "file", id: "main__footer__form__image"}
-      %input{type: "submit", value: "Send", class: "main__footer__form__btn"}
-
+      = form_for [@group, @message] do |f|
+        .main__footer__form
+          = f.text_field :content, class: "main__footer__form__text", placeholder: "type a message"
+          = f.label :image, class: "upload-label" do
+            = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, id: "main__footer__form__image", class: 'hidden'
+          = f.submit 'Send', class: 'main__footer__form__btn'

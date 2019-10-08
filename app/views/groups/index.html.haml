@@ -9,7 +9,7 @@
           %li hoge
       = link_to "Edit", '#', class: "main__header__edit-btn"
     .main__message
-      = render 'messages/text'
+      = render 'messages/message', locals: {message: @message}, collection: @messages
     .main__footer
       %form{action: "#", method: "post"}
       .main__footer__form
