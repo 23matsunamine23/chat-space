@@ -1,37 +1,63 @@
 $(function(){
   function buildHTML(message){
-    var html = `<div class="main__message__box">
-                  <h2 class="main__message__name">
-                    ${message.name}
-                  </h2>
-                  <p class="main__message__text">
-                    ${message.content}
-                  </p>
-                  <p class="main__message__date">
-                    ${message.date}
-                  </p>
-                </div>`
-      return html;
-  }
-  $('#new_message').on('submit', function(e){
-    e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action')
-    $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    })
-    .done(function(data){
-      var html = buildHTML(data);
-      $('.main__message__box').append(html);
-      $('#message_content').val('');
-    })
-    .fail(function(){
-      alert('error');
-    });
+   if ( message.image ) {
+     var html =
+      `<div class="message" data-message-id=${message.id}>
+         <div class="upper-message">
+           <div class="upper-message__user-name">
+             ${message.name}
+           </div>
+           <div class="upper-message__date">
+             ${message.date}
+           </div>
+         </div>
+         <div class="lower-message">
+           <p class="lower-message__content">
+             ${message.content}
+           </p>
+         </div>
+         <img src=${message.image} >
+       </div>`
+     return html;
+   } else {
+     var html =
+      `<div class="message" data-message-id=${message.id}>
+         <div class="upper-message">
+           <div class="upper-message__user-name">
+             ${message.name}
+           </div>
+           <div class="upper-message__date">
+             ${message.date}
+           </div>
+         </div>
+         <div class="lower-message">
+           <p class="lower-message__content">
+             ${message.content}
+           </p>
+         </div>
+       </div>`
+     return html;
+   };
+ }
+$('.js-form').on('submit', function(e){
+ e.preventDefault();
+ var formData = new FormData(this);
+ var url = $(this).attr('action')
+ $.ajax({
+   url: url,
+   type: "POST",
+   data: formData,
+   dataType: 'json',
+   processData: false,
+   contentType: false
+ })
+  .done(function(data){
+    var html = buildHTML(data);
+    $('.messages').append(html);
+    $('.form__message').val('');
+  })
+  .fail(function(){
+    alert('error');
   });
+})
 });

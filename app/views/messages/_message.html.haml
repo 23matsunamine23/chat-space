@@ -1,9 +1,11 @@
-.main__message__box
-  %h2.main__message__name
-    = message.user.name
-  %p.main__message__text
-    - if message.content.present?
-      =message.content
+.message
+  .upper-message
+    .upper-message__user-name
+      = message.user.name
+    .upper-message__date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .lower-message
+    .lower-message__content
+      - if message.content.present?
+        =message.content
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-  %p.main__message__date
-    = message.created_at.strftime("%Y/%m/%d %H:%M")

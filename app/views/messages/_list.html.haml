@@ -1,8 +1,11 @@
-.main__header
-      %h2.main__header__group
-        =current_user.groups.name
-      .member__list
-        %p.member__list__title Member :
-        %ul.member__list__title__name
-          %li hoge
-      = link_to "Edit", '#', class: "main__header__edit-btn"
+.main-header
+  .left-hader
+    .left-header__title
+      = @messages.name
+    %ul.left-header__members
+      Member :
+      %li.member
+        hoge
+  .right-header
+    .right-header__button
+      = link_to "Edit", '#'

@@ -1,21 +1,3 @@
 .container
-  = render 'messages/side_bar'
-  .main
-    .main__header
-      %h2.main__header__group test-group
-      .member__list
-        %p.member__list__title Member :
-        %ul.member__list__title__name
-          %li hoge
-      = link_to "Edit", '#', class: "main__header__edit-btn"
-    .main__message
-      = render partial: '/messages/message', collection: @messages
-    .main__footer
-      %form{action: "#", method: "post"}
-      .main__footer__form
-        %input{type: "text", placeholder: "type a message", class: "main__footer__form__text"}
-        %label.upload-label{for: "main__footer__form__image"}
-          %i.fa.fa-picture-o
-          %input{type: "file", id: "main__footer__form__image"}
-          %input{type: "submit", value: "Send", class: "main__footer__form__btn"}
 
+  = render 'messages/side_bar'
