@@ -2,157 +2,172 @@
   display: flex;
 }
 
-.header{
-  background-color: #38aef0;
-  font-size: 15px;
-  letter-spacing: 1px;
-  text-align: center;
-  height: 24px;
-  line-height: 24px;
-  color: #fff;
-}
-
 .side{
+  box-sizing: border-box;
+  color: white;
   width: 300px;
-  height: 100vh;
-  list-style: none;
-  &__header{
-    height: 100px;
-    padding: 0 20px;
+  .side-header{
     background-color: #253141;
-    display: flex;
-    align-items: center;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 20px;
     &__name{
+      display: inline-block;
       font-size: 16px;
       font-weight: bold;
-      margin-right: 140px;
-      color: #fff;
     }
-    &__btn{
-      text-decoration:none;
-      color: #fff;
-      text-align: center;
-      margin-left: 5px;
+    &__lists{
+      float: right;
+      .list{
+        display: inline-block;
+      }
+      .icon{
+        color: white;
+        font-size: 16px;
+      }
     }
   }
-  &__list{
-    height: calc(100vh - 130px);
+
+  .groups{
     background-color: #2f3e51;
-    padding: 20px 20px 0px 20px;
-    .group__box{
-      padding-bottom: 40px;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+    overflow: scroll;
+    width: 300px;
+    .group{
+      box-sizing: border-box;
+      padding: 20px 0 40px;
+      a {
+        text-decoration: none;
+      }
       &__name{
-        color: #fff;
         font-size: 15px;
-        font-weight: bold;
-        margin-bottom: 5px;
+        color: #fff;
       }
       &__message{
+        font-size: 15px;
+        margin-top: 5px;
         color: #fff;
-        font-size: 11px;
-        font-weight: bold;
       }
     }
   }
 }
 
+
+
 .main{
-  height: 100vh;
-  width: calc(100vw - 300px); 
-  position: relative;
-  &__header{
+  width: calc(100vw - 300px);
+  .main-header{
+    box-sizing: border-box;
     height: 100px;
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
     padding: 0 40px;
-    &__edit-btn{
-      position: absolute;
-      top: 35px;
-      left: 90%;
-      display: block;
-      color: rgb(128, 200, 248);
-      border: 2px solid rgb(128, 200, 248);
-      text-decoration: none;
-      padding: 5px 20px;
-    }
-    &__group{
-      line-height: 100px;
-      font-size: 20px;
-      color: #333333;
-      display: inline;
-    }
-  .member__list{
     display: flex;
-    position: absolute;
-    top: 80px;
-    &__title{
-      font-size: 12px;
-      color: #999;
-    }
-    &__title__name{
-        font-size: 12px;
-        color: #999;
-        padding: 0 5px;
+    justify-content: space-between;
+    .left-header{
+      float: left;
+      &__title{
+        color: #333333;
+        font-size: 20px;
+        margin-top: 35px;
       }
-  } 
+      &__members{
+        color: #999;
+        display: flex;
+        font-size: 12px;
+        margin-top: 15px;
+        .member{
+          display: inline-block;
+          padding-right: 5px;
+        }
+      }
+    }
+    .right-header{
+      border: 1px solid #38AEF0;
+      color: #38AEF0;
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+      &__button a{
+        display: inline-block;
+        text-decoration: none;
+      }
+    }
   }
-  &__message{
-    height: calc(100vh - 130px - 100px);
+
+  .messages{
     background-color: #fafafa;
-    padding: 46px 40px;
-    &__box{
-      padding-bottom: 40px;
-      position: relative;
-    }
-      &__name{
-        font-size: 16px;
-        color: #434a54;
-        font-weight: bold;
+    box-sizing: border-box;
+    padding: 46px 40px 0;
+    height: calc(100vh - 100px - 90px);
+    overflow: scroll;
+    .message{
+      .upper-message{
+        display: flex;
+        &__user-name{
+          color: #434a54;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date{
+          color: #999;
+          font-size: 12px;
+          padding-left: 10px;
+        }
       }
-      &__text{
-        font-size: 14px;
-        color: #434a54;
+      .lower-message{
         margin-top: 10px;
+        &__content{
+          color: #434a54;
+          font-size: 14px;
+          margin-bottom: 40px;
+        }
       }
-      &__date{
-        font-size: 12px;
-        color: #999;
-        position: absolute;
-        top: 0px;
-        left: 100px;
-      }
+    }
   }
-  &__footer{
-    background-color: #DDDDDD;
-    height: 100px;
-    position: fixed;
-    width: calc(100vw - 300px); 
-    bottom: 0;
-    padding: 0 40px;
-    &__form{
-      line-height: 100px;
-      .upload-label{
-        position: absolute;
-        top: 0px;
-        left: 78%;
+
+  .form{
+    background-color: #ddd;
+    box-sizing: border-box;
+    height: 90px;
+    width: 100%;
+    padding: 20px 50px 20px 40px;
+    display: flex;
+    position: relative;
+    &__message{
+      height: 50px;
+      width: calc(100vw - 450px);
+      padding-left: 10px;
+    }
+    &__image{
+      height: 50px;
+      width: 50px;
+      padding-right: 10px;
+      margin: 0;
+      position: absolute;
+      top: 20px;
+      right: 100px;
+      &__label{
+        font-size: 20px;
+        line-height: 50px;
       }
-      #main__footer__form__image{
+      .hidden{
         display: none;
       }
-      &__text{
-        height: 50px;
-        width: 80%;
-        padding-left: 10px;
-      }
-      &__btn{
-        position: absolute;
-        top: 23px;
-        left: 80%;
-        background-color: #38aef0;
-        color: #fff;
-        font-weight: bold;
-        padding: 15px 40px;
-      }
+    }
+    &__submit{
+      background-color: #38AEF0;
+      color: #fff;
+      box-sizing: border-box;
+      font-size: 15px;
+      height: 50px;
+      width: 100px;
+      margin-left: 15px;
+      padding: 0 30px;
+      position: absolute;
+      right: 0;
     }
   }
 }
+

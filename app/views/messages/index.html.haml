@@ -1,26 +1,17 @@
-.header
-  %p.header__message グループを作成しました
-
 .container
   = render 'side_bar'
+
   .main
-    .main__header
-      %h2.main__header__group
-        
-      .member__list
-        %p.member__list__title Member :
-        %ul.member__list__title__name
-          %li hoge
-      = link_to "Edit", '#', class: "main__header__edit-btn"
+    = render 'list'
 
-    .main__message
-      = render @messages
+    .messages
+      = render partial: 'message', collection: @messages
 
-    .main__footer
+    .form
       = form_for [@group, @message] do |f|
-        .main__footer__form
-          = f.text_field :content, class: "main__footer__form__text", placeholder: "type a message"
-          = f.label :image, class: "upload-label" do
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__image
+          = f.label :image, class: 'form__image__label' do
             = fa_icon 'picture-o', class: 'icon'
-          = f.file_field :image, id: "main__footer__form__image", class: 'hidden'
-          = f.submit 'Send', class: 'main__footer__form__btn'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
