@@ -25,30 +25,13 @@ $(document).on('turbolinks:load',function(){
       if (input.length === 0){
         $('#user-search-result').empty();
       }
-     });
+     })
      .fail(function(){
         alert("ユーザー検索に失敗しました");
      });
+
+     $('#user-search-result').on('click', '.user-search-add', function(){
+      $(this).parent().remove();
+    });
   });
-
-  $('.buttons-area').on('click', 'button', function() {
-    $('.buttons-area').append('<button>複製されたボタン</button>');
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
