@@ -1,6 +1,4 @@
 $(document).on('turbolinks:load',function(){
-
-
   function buildHTML(user){
     var html = `<div class="chat-group-user clearfix">
                  <p class="chat-group-user__name">${user.name}</p>
@@ -18,16 +16,39 @@ $(document).on('turbolinks:load',function(){
       dataType: 'json'
     })
 
-    .done(function(datas){
+    .done(function(users){
       $('#user-search-result').empty();
-      datas.forEach(function(data){
-        var html = buildHTML(data);
+      users.forEach(function(user){
+        var html = buildHTML(user);
         $('#user-search-result').append(html);
       });
-
       if (input.length === 0){
         $('#user-search-result').empty();
       }
-   });
+     });
+     .fail(function(){
+        alert("ユーザー検索に失敗しました");
+     });
   });
+
+  $('.buttons-area').on('click', 'button', function() {
+    $('.buttons-area').append('<button>複製されたボタン</button>');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
