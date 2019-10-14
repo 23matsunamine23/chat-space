@@ -29,9 +29,25 @@ $(document).on('turbolinks:load',function(){
      .fail(function(){
         alert("ユーザー検索に失敗しました");
      });
-
-     $('#user-search-result').on('click', '.user-search-add', function(){
-      $(this).parent().remove();
     });
-  });
+
+     function buildHTML2(user){
+      var html2 = `<div class='chat-group-user'>
+                    <input name='group[user_ids][]' type='hidden' value= ${user.userId}>
+                    <p class='chat-group-user__name'>${user.userName}</p>
+                    <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
+                  </div>`
+        return html2;
+    }
+     $('#user-search-result').on('click', '.user-search-add', function(){
+       var user = $(this).data();
+       var html2 = buildHTML2(user);
+       $('#chat-member').append(html2);
+       $(this).parent().remove();
+    });
+
+    $('#chat-member').on('click', '.user-search-remove', function(){
+      $(this).parent().remove();
+   });
+ 
 });
