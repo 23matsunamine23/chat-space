@@ -1,11 +1,12 @@
 .main-header
   .left-hader
     .left-header__title
-      = @messages.name
+      = @group.name
     %ul.left-header__members
       Member :
       %li.member
-        hoge
+        - @group.users.each do |user|
+          = user.name
   .right-header
     .right-header__button
-      = link_to "Edit", '#'
+      = link_to "Edit", edit_group_path(@group)
