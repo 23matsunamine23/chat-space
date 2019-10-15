@@ -55,7 +55,6 @@ var reloadMessages = function() {
     dataType: 'json'
   })
   .done(function(messages) {
-    console.log(1);
     var insertHTML = '';
     messages.forEach(function(message) {
       insertHTML = buildHTML(message);
