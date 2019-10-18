@@ -13,7 +13,7 @@
     padding: 0 20px;
     &__name{
       display: inline-block;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: bold;
     }
     &__lists{
@@ -41,11 +41,11 @@
         text-decoration: none;
       }
       &__name{
-        font-size: 15px;
+        font-size: 13px;
         color: #fff;
       }
       &__message{
-        font-size: 15px;
+        font-size: 11px;
         margin-top: 5px;
         color: #fff;
       }
@@ -67,7 +67,7 @@
       float: left;
       &__title{
         color: #333333;
-        font-size: 20px;
+        font-size: 18px;
         margin-top: 35px;
       }
       &__members{
@@ -78,6 +78,7 @@
         .member{
           display: inline-block;
           padding-right: 5px;
+          font-size: 12px;
         }
       }
     }
@@ -92,6 +93,7 @@
       &__button a{
         display: inline-block;
         text-decoration: none;
+        color: #38AEF0;
       }
     }
   }
@@ -107,7 +109,7 @@
         display: flex;
         &__user-name{
           color: #434a54;
-          font-size: 16px;
+          font-size: 15px;
           font-weight: bold;
         }
         &__date{
@@ -120,7 +122,7 @@
         margin-top: 10px;
         &__content{
           color: #434a54;
-          font-size: 14px;
+          font-size: 12px;
           margin-bottom: 40px;
         }
       }
@@ -136,8 +138,8 @@
     display: flex;
     position: relative;
     &__message{
-      height: 50px;
-      width: calc(100vw - 450px);
+      height: 47px;
+      width: calc(100vw - 500px);
       padding-left: 10px;
     }
     &__image{
@@ -146,8 +148,8 @@
       padding-right: 10px;
       margin: 0;
       position: absolute;
-      top: 20px;
-      right: 100px;
+      top: 22px;
+      right: 145px;
       &__label{
         font-size: 20px;
         line-height: 50px;
@@ -166,7 +168,7 @@
       margin-left: 15px;
       padding: 0 30px;
       position: absolute;
-      right: 0;
+      right: 30px;
     }
   }
 }
